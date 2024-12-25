@@ -5,7 +5,7 @@ export function ContactHero() {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-3xl md:text-5xl font-bold mb-6">Get in Touch</h1>
             <p className="text-lg md:text-xl text-gray-300">
-              We'd love to hear from you. Our friendly team is always here to chat.
+              We love to hear from you. Our friendly team is always here to chat.
             </p>
           </div>
         </div>
