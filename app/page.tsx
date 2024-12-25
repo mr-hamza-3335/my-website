@@ -6,7 +6,6 @@ import { FeaturedProducts } from '@/components/featured-products'
 import { JoinClub } from '@/components/join-club'
 import { BrandStory } from '@/components/brand-story'
 import { Newsletter } from '@/components/newsletter'
-import { Footer } from '@/components/footer'
 
 export default function Home() {
   return (
@@ -19,7 +18,7 @@ export default function Home() {
       <JoinClub />
       <BrandStory />
       <Newsletter />
-      <Footer />
+  
     </main>
   )
 }

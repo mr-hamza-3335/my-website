@@ -1,78 +1,83 @@
 import Link from "next/link"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+import { Facebook, Instagram, LinkedinIcon as LinkedIn, Twitter, Youtube } from 'lucide-react'
+
+const categories = [
+  { name: "New arrivals", href: "#" },
+  { name: "Best sellers", href: "#" },
+  { name: "Recently viewed", href: "#" },
+  { name: "Popular this week", href: "#" },
+  { name: "All products", href: "#" },
+]
+
+const ourCompany = [
+  { name: "About us", href: "/about" },
+  { name: "Vacancies", href: "#" },
+  { name: "Contact us", href: "/contact" },
+  { name: "Privacy", href: "#" },
+  { name: "Returns policy", href: "#" },
+]
+
+const socialLinks = [
+  { name: "LinkedIn", href: "#", icon: LinkedIn },
+  { name: "Facebook", href: "#", icon: Facebook },
+  { name: "Instagram", href: "#", icon: Instagram },
+  { name: "Twitter", href: "#", icon: Twitter },
+  { name: "YouTube", href: "#", icon: Youtube },
+]
 
 export function Footer() {
   return (
-    <footer className="bg-[#2D2640] text-white py-12">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-[#2A254B] text-white">
+      <div className="container mx-auto px-4 md:px-6 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="font-bold text-lg mb-4">About Us</h3>
-            <p className="text-gray-300">
-              Modern furniture store offering quality designs for contemporary living spaces.
-            </p>
-          </div>
-          <div>
-            <h3 className="font-bold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-bold text-lg mb-4">Menu</h3>
             <ul className="space-y-2">
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-white">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-white">
-                  Shop
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-white">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-white">
-                  Contact
-                </Link>
-              </li>
+              {categories.map((item) => (
+                <li key={item.name}>
+                  <Link href={item.href} className="text-gray-300 hover:text-white">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div>
-            <h3 className="font-bold text-lg mb-4">Categories</h3>
+            <h3 className="font-bold text-lg mb-4">Our Company</h3>
             <ul className="space-y-2">
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-white">
-                  Chairs
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-white">
-                  Sofas
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-white">
-                  Tables
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-white">
-                  Lighting
-                </Link>
-              </li>
+              {ourCompany.map((item) => (
+                <li key={item.name}>
+                  <Link href={item.href} className="text-gray-300 hover:text-white">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
-          <div>
-            <h3 className="font-bold text-lg mb-4">Contact</h3>
-            <ul className="space-y-2 text-gray-300">
-              <li>123 Furniture Street</li>
-              <li>City, State 12345</li>
-              <li>contact@example.com</li>
-              <li>(123) 456-7890</li>
-            </ul>
+          <div className="lg:col-span-2">
+            <h3 className="font-bold text-lg mb-4">Join our mailing list</h3>
+            <form className="flex gap-2 mb-4">
+              <Input
+                type="email"
+                placeholder="your@email.com"
+                className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+              />
+              <Button variant="secondary">Sign up</Button>
+            </form>
+            <div className="flex space-x-4">
+              {socialLinks.map((item) => (
+                <Link key={item.name} href={item.href} className="text-gray-300 hover:text-white">
+                  <item.icon className="h-5 w-5" />
+                  <span className="sr-only">{item.name}</span>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-          <p>&copy; {new Date().getFullYear()} Your Furniture Store. All rights reserved.</p>
+        <div className="border-t border-white/20 mt-8 pt-8 text-center text-gray-300">
+          <p>&copy; {new Date().getFullYear()} Avion LTD</p>
         </div>
       </div>
     </footer>
