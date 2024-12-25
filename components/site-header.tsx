@@ -1,7 +1,6 @@
 import Link from "next/link"
 import { Search, ShoppingCart, User } from 'lucide-react'
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 
 const navigation = [
   { name: "Plant pots", href: "#" },

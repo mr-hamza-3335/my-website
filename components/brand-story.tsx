@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 
 export function BrandStory() {
@@ -25,10 +26,11 @@ export function BrandStory() {
             </Button>
           </div>
           <div className="relative aspect-[4/3] bg-[#F9F9F9]">
-            <img
+            <Image
               src="/Image Block.png"
               alt="Modern living room setup"
-              className="w-full h-full object-cover"
+              fill
+              style={{ objectFit: "cover" }}
             />
           </div>
         </div>

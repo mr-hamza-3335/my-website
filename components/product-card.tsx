@@ -1,7 +1,8 @@
+import Image from 'next/image'
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
-interface ProductCardProps {
+export interface ProductCardProps {
   name: string
   price: string
   image: string
@@ -12,10 +13,11 @@ export function ProductCard({ name, price, image }: ProductCardProps) {
     <Card className="overflow-hidden">
       <CardContent className="p-0">
         <div className="aspect-square relative">
-          <img
+          <Image
             src={image}
             alt={name}
-            className="absolute inset-0 w-full h-full object-cover"
+            layout="fill"
+            objectFit="cover"
           />
         </div>
       </CardContent>

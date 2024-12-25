@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 
 export function HeroSection() {
@@ -16,11 +17,13 @@ export function HeroSection() {
               Shop Now
             </Button>
           </div>
-          <div className="relative h-[300px] md:h-[400px]">
-            <img
+          <div className="relative h-[400px] w-full">
+            <Image
               src="/Image (2).png"
-              alt="Modern chair"
-              className="absolute inset-0 w-full h-full object-cover rounded-lg"
+              alt="Modern furniture"
+              fill
+              style={{ objectFit: "cover" }}
+              className="rounded-lg"
             />
           </div>
         </div>

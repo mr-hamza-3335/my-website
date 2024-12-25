@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Card, CardContent } from "@/components/ui/card"
 
 export function FeaturedProducts() {
@@ -9,10 +10,12 @@ export function FeaturedProducts() {
           <Card>
             <CardContent className="p-6">
               <div className="aspect-[4/3] relative mb-4">
-                <img
+                <Image
                   src="/download (8).jpg"
                   alt="Featured chair"
-                  className="absolute inset-0 w-full h-full object-cover rounded-lg"
+                  fill
+                  style={{ objectFit: "cover" }}
+                  className="rounded-lg"
                 />
               </div>
               <h3 className="text-xl font-semibold mb-2">Luxury Chairs</h3>
@@ -22,10 +25,12 @@ export function FeaturedProducts() {
           <Card>
             <CardContent className="p-6">
               <div className="aspect-[4/3] relative mb-4">
-                <img
+                <Image
                   src="/download (9).jpg"
                   alt="Featured sofa"
-                  className="absolute inset-0 w-full h-full object-cover rounded-lg"
+                  fill
+                  style={{ objectFit: "cover" }}
+                  className="rounded-lg"
                 />
               </div>
               <h3 className="text-xl font-semibold mb-2">Modern Sofas</h3>

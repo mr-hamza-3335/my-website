@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -37,10 +38,11 @@ export function NewCeramics() {
           {ceramics.map((item) => (
             <div key={item.id} className="space-y-3">
               <div className="aspect-square relative overflow-hidden bg-gray-100">
-                <img
+                <Image
                   src={item.image}
                   alt={item.name}
-                  className="object-cover w-full h-full"
+                  fill
+                  style={{ objectFit: "cover" }}
                 />
               </div>
               <div>
