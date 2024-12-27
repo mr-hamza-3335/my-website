@@ -1,34 +1,54 @@
+'use client'
+
 import Image from 'next/image'
+import Link from 'next/link'
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { formatCurrency } from "@/lib/utils"
 
 export interface ProductCardProps {
-  name: string
-  price: string
-  image: string
+  product: {
+    id: number;
+    name: string;
+    price: number;
+    image: string;
+    category: string;
+  };
+  onAddToCart: () => void;
 }
 
-export function ProductCard({ name, price, image }: ProductCardProps) {
+export function ProductCard({ product, onAddToCart }: ProductCardProps) {
+  if (!product) {
+    return null;
+  }
+
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.preventDefault()
+    onAddToCart()
+  }
+
   return (
-    <Card className="overflow-hidden">
-      <CardContent className="p-0">
-        <div className="aspect-square relative">
-          <Image
-            src={image}
-            alt={name}
-            layout="fill"
-            objectFit="cover"
-          />
-        </div>
-      </CardContent>
-      <CardFooter className="p-4 flex flex-col items-start gap-2">
-        <h3 className="font-semibold">{name}</h3>
-        <p className="text-gray-600">{price}</p>
-        <Button variant="outline" size="sm" className="w-full">
-          Add to Cart
-        </Button>
-      </CardFooter>
-    </Card>
+    <Link href={`/products/${product.id}`}>
+      <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <CardContent className="p-0">
+          <div className="aspect-square relative">
+            <Image
+              src={product.image}
+              alt={product.name}
+              fill
+              className="object-cover"
+            />
+          </div>
+        </CardContent>
+        <CardFooter className="p-4 flex flex-col items-start gap-2">
+          <h3 className="font-semibold">{product.name}</h3>
+          <p className="text-gray-600">{formatCurrency(product.price)}</p>
+          <Button variant="outline" size="sm" className="w-full" onClick={handleAddToCart}>
+            Add to Cart
+          </Button>
+        </CardFooter>
+      </Card>
+    </Link>
   )
 }
 

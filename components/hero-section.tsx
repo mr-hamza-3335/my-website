@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { Button } from "@/components/ui/button"
 
 export function HeroSection() {
@@ -13,17 +14,18 @@ export function HeroSection() {
             <p className="text-lg md:text-xl text-gray-200">
               Discover our curated collection of contemporary furniture pieces designed for your lifestyle.
             </p>
-            <Button size="lg" variant="secondary">
-              Shop Now
-            </Button>
+            <Link href="/products">
+              <Button size="lg" variant="secondary">
+                Shop Now
+              </Button>
+            </Link>
           </div>
-          <div className="relative h-[400px] w-full">
+          <div className="relative h-[400px]">
             <Image
-              src="/Image (2).png"
-              alt="Modern furniture"
+              src="/images/hero.jpg"
+              alt="Modern living room"
               fill
-              style={{ objectFit: "cover" }}
-              className="rounded-lg"
+              className="object-cover rounded-lg"
             />
           </div>
         </div>

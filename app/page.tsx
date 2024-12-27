@@ -1,25 +1,24 @@
 import { HeroSection } from '@/components/hero-section'
-import { Features } from '@/components/features'
-import { NewCeramics } from '@/components/new-ceramics'
-import { ProductGrid } from '@/components/product-grid'
-import { FeaturedProducts } from '@/components/featured-products'
-import { JoinClub } from '@/components/join-club'
 import { BrandStory } from '@/components/brand-story'
-import { Newsletter } from '@/components/newsletter'
+import { Features } from '@/components/features'
+import { JoinClub } from '@/components/join-club'
+import { Testimonials } from '@/components/testimonials'
+import { InstagramFeed } from '@/components/instagram-feed'
+import { PopularCategories } from '@/components/popular-categories'
+import { LatestBlogPosts } from '@/components/latest-blog-posts'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <div className="bg-white">
       <HeroSection />
       <Features />
-      <NewCeramics />
-      <ProductGrid />
-      <FeaturedProducts />
-      <JoinClub />
+      <PopularCategories />
       <BrandStory />
-      <Newsletter />
-  
-    </main>
+      <Testimonials />
+      <LatestBlogPosts />
+      <JoinClub />
+      <InstagramFeed />
+    </div>
   )
 }
 

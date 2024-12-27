@@ -18,7 +18,7 @@ export function AboutStory() {
           </div>
           <div className="relative aspect-[4/3]">
             <Image
-              src="/Image Block.png"
+              src="/images/yellow-chair.jpg"
               alt="Yellow chair in modern setting"
               width={600}
               height={450}

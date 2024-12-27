@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { Button } from "@/components/ui/button"
 
 export function BrandStory() {
@@ -21,16 +22,18 @@ export function BrandStory() {
                 London interior design community.
               </p>
             </div>
-            <Button variant="outline" size="lg">
-              Get in touch
-            </Button>
+            <Link href="/about">
+              <Button variant="outline" size="lg">
+                Get in touch
+              </Button>
+            </Link>
           </div>
           <div className="relative aspect-[4/3] bg-[#F9F9F9]">
             <Image
-              src="/Image Block.png"
+              src="/images/brand-story.jpg"
               alt="Modern living room setup"
               fill
-              style={{ objectFit: "cover" }}
+              className="object-cover rounded-lg"
             />
           </div>
         </div>

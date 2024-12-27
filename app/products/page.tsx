@@ -1,10 +1,13 @@
 import { ProductGrid } from '@/components/products/product-grid'
+import { CategorySelect } from '@/components/category-select'
 
-export default function ProductsPage() {
+export default function AllProductsPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <div className="container mx-auto px-4 py-16">
+      <h1 className="text-3xl font-bold mb-8">All Products</h1>
+      <CategorySelect />
       <ProductGrid />
-    </main>
+    </div>
   )
 }
 

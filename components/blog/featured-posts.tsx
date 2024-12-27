@@ -7,14 +7,14 @@ const featuredPosts = [
   {
     title: "The Art of Minimalist Living",
     excerpt: "Discover how minimalist furniture can transform your living space and mindset.",
-    image: "/Image (3).png",
+    image: "/images/minimal-living.jpg",
     date: "March 15, 2024",
     category: "Interior Design"
   },
   {
     title: "Sustainable Furniture Trends",
     excerpt: "Exploring eco-friendly materials and sustainable production methods.",
-    image: "/Image (2).png",
+    image: "/images/sustainable-furniture.jpg",
     date: "March 12, 2024",
     category: "Sustainability"
   }

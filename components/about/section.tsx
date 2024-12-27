@@ -8,7 +8,7 @@ export function ServiceSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="relative aspect-square md:aspect-[4/3]">
             <Image
-              src="/Image (3).png"
+              src="/images/black-sofa.jpg"
               alt="Modern black sofa"
               width={600}
               height={450}
@@ -17,7 +17,7 @@ export function ServiceSection() {
           </div>
           <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-              Our service is just personal, it is actually hyper-personally exquisite
+              Our service isn't just personal, it's actually hyper-personally exquisite
             </h2>
             <div className="space-y-4 text-muted-foreground">
               <p>

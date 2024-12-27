@@ -4,10 +4,26 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { useCart } from "@/lib/cart-context"
 
 export function ProductDetail() {
   const [selectedSize, setSelectedSize] = useState('small')
-  const [quantity, setQuantity] = useState('1')
+  const [quantity, setQuantity] = useState(1)
+  const { addToCart } = useCart()
+
+  const product = {
+    id: 1,
+    name: "The Dandy Chair",
+    price: 250,
+    image: "/images/dandy-chair.jpg"
+  }
+
+  const handleAddToCart = () => {
+    addToCart({
+      ...product,
+      quantity
+    })
+  }
 
   return (
     <section className="py-16 md:py-24">
@@ -15,8 +31,8 @@ export function ProductDetail() {
         <div className="grid md:grid-cols-2 gap-12">
           <div className="relative aspect-square bg-gray-100">
             <Image
-              src="/images/dandy-chair.jpg"
-              alt="The Dandy Chair"
+              src={product.image}
+              alt={product.name}
               width={600}
               height={600}
               className="object-cover"
@@ -24,8 +40,8 @@ export function ProductDetail() {
           </div>
           <div className="space-y-6">
             <div>
-              <h1 className="text-3xl font-bold mb-2">The Dandy Chair</h1>
-              <p className="text-2xl">£250</p>
+              <h1 className="text-3xl font-bold mb-2">{product.name}</h1>
+              <p className="text-2xl">£{product.price}</p>
             </div>
             
             <div className="space-y-4">
@@ -49,7 +65,7 @@ export function ProductDetail() {
                 <label htmlFor="quantity" className="block text-sm font-medium mb-2">
                   Quantity
                 </label>
-                <Select value={quantity} onValueChange={setQuantity}>
+                <Select value={quantity.toString()} onValueChange={(value) => setQuantity(parseInt(value))}>
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder="Select quantity" />
                   </SelectTrigger>
@@ -64,7 +80,7 @@ export function ProductDetail() {
               </div>
             </div>
 
-            <Button className="w-full bg-[#2A254B] hover:bg-[#2A254B]/90">
+            <Button className="w-full bg-[#2A254B] hover:bg-[#2A254B]/90" onClick={handleAddToCart}>
               Add to cart
             </Button>
 
