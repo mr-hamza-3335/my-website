@@ -9,7 +9,6 @@ interface CategoryPageProps {
   params: { category: string };
 }
 
-// Generate metadata for the category
 export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
   const category = categoryData[params.category];
   if (!category) {
@@ -23,14 +22,6 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   };
 }
 
-// Generate static paths for all categories
-export async function generateStaticParams() {
-  return Object.keys(categoryData).map((category) => ({
-    category,
-  }));
-}
-
-// Category page component
 export default function CategoryPage({ params }: CategoryPageProps) {
   const category = categoryData[params.category];
 
