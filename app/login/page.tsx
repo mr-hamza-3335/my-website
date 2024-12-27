@@ -47,7 +47,7 @@ export default function LoginPage() {
           <Button type="submit" className="w-full">Log in</Button>
         </form>
         <p className="mt-4 text-center">
-          Don't have an account? <Link href="/signup" className="text-blue-600 hover:underline">Sign up</Link>
+          Do not have an account? <Link href="/signup" className="text-blue-600 hover:underline">Sign up</Link>
         </p>
       </div>
     </div>

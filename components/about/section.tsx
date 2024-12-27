@@ -17,7 +17,7 @@ export function ServiceSection() {
           </div>
           <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-              Our service isn't just personal, it's actually hyper-personally exquisite
+              Our service is not just personal, it is actually hyper-personally exquisite
             </h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
